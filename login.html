@@ -1,0 +1,111 @@
+<!-- login.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login</title>
+  <style>
+    body { font-family: Arial, sans-serif; background:#000000; color:#000000; display:flex; align-items:center; justify-content:center; height:100vh; margin:0; }
+    .login-box { background:#ffffff; padding:30px; border-radius:10px; width:400px; box-shadow:0 6px 20px rgba(0,0,0,0.6); }
+    h2 { text-align:center; color:#ff4081; margin-bottom:20px; }
+    label { display:block; margin:10px 0 5px; }
+    input { width:100%; padding:12px; margin-bottom:15px; border:2px solid #0c0c0c;; border-radius:6px; font-size:15px; }
+    button { width:100%; padding:14px; background:#ff4081; border:2px solid #ccc; border-radius:6px; font-size:16px; color:#060606; cursor:pointer; }
+    button:hover { background:#e91e63; }
+    .hidden { display:none; }
+    .error { color:#ff5252; margin-bottom:10px; text-align:center; }
+  </style>
+</head>
+<body>
+  <div class="login-box">
+    <!-- Logo section -->
+    <div style="text-align:center; margin-bottom:20px;">
+      <img src="logo/Logo.png" alt="Royal Balloon Decor" style="width:200px; height:auto;">
+    </div>
+
+    <h2>Login</h2>
+
+    <!-- Step 1 -->
+    <form id="step1">
+      <div id="error1" class="error"></div>
+      <label>First Name</label>
+      <input type="text" id="firstName" required>
+
+      <label>Second Name</label>
+      <input type="text" id="lastName" required>
+
+      <label>Phone Number / Gmail</label>
+      <input type="text" id="contact" required>
+
+      <button type="submit">Log In via OTP</button>
+    </form>
+
+    <!-- Step 2 -->
+    <form id="step2" class="hidden">
+      <div id="error2" class="error"></div>
+      <label>Enter OTP</label>
+      <input type="text" id="otp" maxlength="6" required>
+      <button type="submit">Submit OTP</button>
+      <p style="text-align:center; margin-top:10px; cursor:pointer; color:#bbb;" onclick="goBack()">← Go Back To Login Screen</p>
+    </form>
+
+    <!-- Success -->
+    <div id="success" class="hidden">
+      <h3 style="text-align:center; color:#4caf50;">Login Successful 🎉</h3>
+    </div>
+  </div>
+
+
+<script>
+  let userData = {};
+
+  // Step 1 validation
+  document.getElementById("step1").addEventListener("submit", function(e) {
+    e.preventDefault();
+    const firstName = document.getElementById("firstName").value.trim();
+    const lastName = document.getElementById("lastName").value.trim();
+    const contact = document.getElementById("contact").value.trim();
+    const errorBox = document.getElementById("error1");
+
+    // Validate phone or email
+    if (/^\d{10}$/.test(contact) || /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(contact)) {
+      userData = { firstName, lastName, contact };
+      alert("OTP sent to " + contact + " (demo OTP: 123456)");
+      document.getElementById("step1").classList.add("hidden");
+      document.getElementById("step2").classList.remove("hidden");
+      errorBox.textContent = "";
+    } else {
+      errorBox.textContent = "Invalid number; must be 10 digit or valid email";
+    }
+  });
+
+  // Step 2 OTP check
+  document.getElementById("step2").addEventListener("submit", function(e) {
+    e.preventDefault();
+    const otp = document.getElementById("otp").value.trim();
+    const errorBox = document.getElementById("error2");
+
+    if (otp === "123456") { // demo OTP
+      fetch("/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(userData)
+      })
+      .then(res => res.json())
+      .then(res => {
+        document.getElementById("step2").classList.add("hidden");
+        document.getElementById("success").classList.remove("hidden");
+      })
+      .catch(err => console.error(err));
+    } else {
+      errorBox.textContent = "Invalid OTP";
+    }
+  });
+
+  function goBack() {
+    document.getElementById("step2").classList.add("hidden");
+    document.getElementById("step1").classList.remove("hidden");
+  }
+</script>
+</body>
+</html>

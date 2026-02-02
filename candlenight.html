@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="en" style="height: 100%;">
+<head>
+    <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Candlenight Decorations</title>
+  <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            height: 100%;
+            background-color: #111827;
+        }
+        
+        .container {
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #1e3a8a 0%, #312e81 50%, #1e1b4b 100%);
+            color: #fef3c7;
+            text-align: center;
+            padding: 48px 16px;
+            box-shadow: 0 4px 6px rgba(239, 237, 237, 0.3);
+        }
+        
+        .header h1 {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+        
+        .header p {
+            font-size: 1.25rem;
+            opacity: 0.9;
+        }
+        
+        .main {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 32px 16px;
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 24px;
+        }
+        
+        .card {
+            background: #c0baba;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(255,215,0,0.3);
+        }
+        
+        .card-image {
+            height: 256px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+        }
+        
+        .card-image-1 {
+            background: linear-gradient(135deg, #78350f 0%, #713f12 100%);
+        }
+        
+        .card-image-2 {
+            background: linear-gradient(135deg, #7c2d12 0%, #78350f 100%);
+        }
+        
+        .card-image-3 {
+            background: linear-gradient(135deg, #713f12 0%, #7c2d12 100%);
+        }
+        
+        .card-image-4 {
+            background: linear-gradient(135deg, #78350f 0%, #7c2d12 100%);
+        }
+        
+        .card-image-5 {
+            background: linear-gradient(135deg, #7c2d12 0%, #713f12 100%);
+        }
+        
+        .card-image-6 {
+            background: linear-gradient(135deg, #713f12 0%, #78350f 100%);
+        }
+        
+        .card-content {
+            padding: 24px;
+        }
+        
+        .card-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #fef3c7;
+            margin-bottom: 8px;
+        }
+        
+        .card-description {
+            color: #000000;
+            margin-bottom: 16px;
+            line-height: 1.5;
+        }
+        
+        .card-price {
+            font-size: 1.875rem;
+            font-weight: bold;
+            color: #fbbf24;
+        }
+        
+        .back-section {
+            text-align: center;
+            margin-top: 48px;
+        }
+        
+        .back-button {
+            display: inline-block;
+            background-color: #d97706;
+            color: white;
+            font-weight: bold;
+            padding: 12px 32px;
+            border-radius: 9999px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+        
+        .back-button:hover {
+            background-color: #b45309;
+        }
+        
+        @media (min-width: 768px) {
+            .grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .header h1 {
+                font-size: 3rem;
+            }
+        }
+        
+        @media (min-width: 1024px) {
+            .grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            
+            .header h1 {
+                font-size: 3.5rem;
+            }
+        }
+    </style>
+  <div class="container">
+   <header class="header">
+    <h1>🕯️ Candlenight Decorations</h1>
+    <p>Create Magical Moments Under Candlelight</p>
+   </header>
+   <main class="main">
+    <div class="grid">
+     <div class="card">
+      <div class="card-image card-image-1"><span>🕯️</span>
+      </div>
+      <div class="card-content">
+       <h3 class="card-title">Classic Candle Pathway</h3>
+       <p class="card-description">Enchanting pathway lined with aromatic candles and rose petals</p>
+       <div class="card-price-section"><span class="card-price-original">₹2,799</span> <span class="card-price">₹1,999</span> <span class="card-discount">29% OFF</span>
+       </div>
+       <div class="card-rating"><span class="stars">★★★★★</span> <span class="rating-text">4.7 (142 reviews)</span>
+       </div>
+      </div>
+     </div>
+     <div class="card">
+      <div class="card-image card-image-2"><span>✨</span>
+      </div>
+      <div class="card-content">
+       <h3 class="card-title">Floating Candles Setup</h3>
+       <p class="card-description">Beautiful floating candles in decorative bowls with flowers</p>
+       <div class="card-price-section"><span class="card-price-original">₹3,499</span> <span class="card-price">₹2,499</span> <span class="card-discount">29% OFF</span>
+       </div>
+       <div class="card-rating"><span class="stars">★★★★☆</span> <span class="rating-text">4.6 (198 reviews)</span>
+       </div>
+      </div>
+     </div>
+     <div class="card">
+      <div class="card-image card-image-3"><span>🌙</span>
+      </div>
+      <div class="card-content">
+       <h3 class="card-title">Moonlight Candle Dinner</h3>
+       <p class="card-description">Romantic dinner setup with pillar candles and elegant table decor</p>
+       <div class="card-price-section"><span class="card-price-original">₹5,599</span> <span class="card-price">₹3,999</span> <span class="card-discount">29% OFF</span>
+       </div>
+       <div class="card-rating"><span class="stars">★★★★★</span> <span class="rating-text">4.9 (267 reviews)</span>
+       </div>
+      </div>
+     </div>
+     <div class="card">
+      <div class="card-image card-image-4"><span>🪔</span>
+      </div>
+      <div class="card-content">
+       <h3 class="card-title">Traditional Diya Arrangement</h3>
+       <p class="card-description">Traditional clay lamps with marigold flowers and rangoli</p>
+       <div class="card-price-section"><span class="card-price-original">₹2,499</span> <span class="card-price">₹1,799</span> <span class="card-discount">28% OFF</span>
+       </div>
+       <div class="card-rating"><span class="stars">★★★★★</span> <span class="rating-text">4.8 (215 reviews)</span>
+       </div>
+      </div>
+     </div>
+     <div class="card">
+      <div class="card-image card-image-5"><span>🔥</span>
+      </div>
+      <div class="card-content">
+       <h3 class="card-title">Candle Wall Backdrop</h3>
+       <p class="card-description">Stunning wall of pillar candles with mirror accents</p>
+       <div class="card-price-section"><span class="card-price-original">₹6,299</span> <span class="card-price">₹4,499</span> <span class="card-discount">29% OFF</span>
+       </div>
+       <div class="card-rating"><span class="stars">★★★★☆</span> <span class="rating-text">4.5 (183 reviews)</span>
+       </div>
+      </div>
+     </div>
+     <div class="card">
+      <div class="card-image card-image-6"><span>💫</span>
+      </div>
+      <div class="card-content">
+       <h3 class="card-title">Premium Candlelight Experience</h3>
+       <p class="card-description">Complete setup with scented candles, lanterns, and ambiance lighting</p>
+       <div class="card-price-section"><span class="card-price-original">₹8,499</span> <span class="card-price">₹5,999</span> <span class="card-discount">29% OFF</span>
+       </div>
+       <div class="card-rating"><span class="stars">★★★★★</span> <span class="rating-text">4.9 (324 reviews)</span>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div class="back-section"><a href="index.html" class="back-button">← Back to Categories</a>
+    </div>
+   </main>
+  </div>
+
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9c72a325760ab117',t:'MTc2OTk2MTM3MC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>

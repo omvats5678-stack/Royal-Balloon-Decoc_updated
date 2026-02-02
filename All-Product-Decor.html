@@ -1,0 +1,567 @@
+<!doctype html>
+<html lang="en" style="height: 100%;">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anniversary Decorations</title>
+  <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            height: 100%;
+            background-color: #fef2f2;
+        }
+        
+        .container {
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #ec4899 0%, #8b5cf6 100%);
+            color: white;
+            text-align: center;
+            padding: 48px 16px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .header h1 {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+        
+        .header p {
+            font-size: 1.25rem;
+            opacity: 0.9;
+        }
+        
+        .main {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 32px 16px;
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 24px;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+        
+        .card-image {
+            height: 256px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+        }
+        
+        .card-image-1 {
+            background: linear-gradient(135deg, #fbcfe8 0%, #e9d5ff 100%);
+        }
+        
+        .card-image-2 {
+            background: linear-gradient(135deg, #fecaca 0%, #fbcfe8 100%);
+        }
+        
+        .card-image-3 {
+            background: linear-gradient(135deg, #e9d5ff 0%, #fbcfe8 100%);
+        }
+        
+        .card-image-4 {
+            background: linear-gradient(135deg, #fbcfe8 0%, #fecaca 100%);
+        }
+        
+        .card-image-5 {
+            background: linear-gradient(135deg, #e9d5ff 0%, #fecaca 100%);
+        }
+        
+        .card-image-6 {
+            background: linear-gradient(135deg, #fecaca 0%, #e9d5ff 100%);
+        }
+        
+        .card-content {
+            padding: 24px;
+        }
+        
+        .card-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #1f2937;
+            margin-bottom: 8px;
+        }
+        
+        .card-description {
+            color: #4b5563;
+            margin-bottom: 16px;
+            line-height: 1.5;
+        }
+        
+        .card-price-section {
+            display: flex;
+            align-items: baseline;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+        
+        .card-price-original {
+            font-size: 1.125rem;
+            color: #9ca3af;
+            text-decoration: line-through;
+        }
+        
+        .card-price {
+            font-size: 1.875rem;
+            font-weight: bold;
+            color: #db2777;
+        }
+        
+        .card-discount {
+            background-color: #dcfce7;
+            color: #16a34a;
+            font-size: 0.875rem;
+            font-weight: bold;
+            padding: 4px 8px;
+            border-radius: 4px;
+        }
+        
+        .card-rating {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 12px;
+        }
+        
+        .stars {
+            color: #fbbf24;
+            font-size: 1rem;
+        }
+        
+        .rating-text {
+            color: #6b7280;
+            font-size: 0.875rem;
+        }
+        
+        .back-section {
+            text-align: center;
+            margin-top: 48px;
+        }
+        
+        .back-button {
+            display: inline-block;
+            background-color: #374151;
+            color: white;
+            font-weight: bold;
+            padding: 12px 32px;
+            border-radius: 9999px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+        
+        .back-button:hover {
+            background-color: #1f2937;
+        }
+        
+        @media (min-width: 768px) {
+            .grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .header h1 {
+                font-size: 3rem;
+            }
+        }
+        
+        @media (min-width: 1024px) {
+            .grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            
+            .header h1 {
+                font-size: 3.5rem;
+            }
+        }
+    </style>
+
+  <div class="container">
+   <header class="header">
+    <h1>💕 Anniversary Decorations</h1>
+    <p>Celebrate Your Love Story</p>
+   </header>
+   <main class="main">
+    <div class="grid">
+     <div class="card">
+      <div class="card-image card-image-1"><span>🎊</span>
+      </div>
+      <div class="card-content">
+       <h3 class="card-title">Romantic Rose Setup</h3>
+       <p class="card-description">Beautiful rose petals arrangement with candles and fairy lights</p>
+       <div class="card-price-section"><span class="card-price-original">₹3,999</span> <span class="card-price">₹2,999</span> <span class="card-discount">25% OFF</span>
+       </div>
+       <div class="card-rating"><span class="stars">★★★★★</span> <span class="rating-text">4.8 (156 reviews)</span>
+       </div>
+      </div>
+     </div>
+     <div class="card">
+      <div class="card-image card-image-2"><span>💝</span>
+      </div>
+      <div class="card-content">
+       <h3 class="card-title">Heart Balloon Arch</h3>
+       <p class="card-description">Stunning heart-shaped balloon decoration with LED lights</p>
+       <div class="card-price-section"><span class="card-price-original">₹4,999</span> <span class="card-price">₹3,499</span> <span class="card-discount">30% OFF</span>
+       </div>
+       <div class="card-rating"><span class="stars">★★★★☆</span> <span class="rating-text">4.6 (203 reviews)</span>
+       </div>
+      </div>
+     </div>
+     <div class="card">
+      <div class="card-image card-image-3"><span>🌹</span>
+      </div>
+      <div class="card-content">
+       <h3 class="card-title">Premium Floral Backdrop</h3>
+       <p class="card-description">Elegant floral wall with personalized message board</p>
+       <div class="card-price-section"><span class="card-price-original">₹6,999</span> <span class="card-price">₹4,999</span> <span class="card-discount">29% OFF</span>
+       </div>
+       <div class="card-rating"><span class="stars">★★★★★</span> <span class="rating-text">4.9 (342 reviews)</span>
+       </div>
+      </div>
+     </div>
+     <div class="card">
+      <div class="card-image card-image-4"><span>🕯️</span>
+      </div>
+      <div class="card-content">
+       <h3 class="card-title">Candlelight Romance</h3>
+       <p class="card-description">Intimate setup with scented candles and rose pathway</p>
+       <div class="card-price-section"><span class="card-price-original">₹3,499</span> <span class="card-price">₹2,499</span> <span class="card-discount">29% OFF</span>
+       </div>
+       <div class="card-rating"><span class="stars">★★★★★</span> <span class="rating-text">4.7 (187 reviews)</span>
+       </div>
+      </div>
+     </div>
+     <div class="card">
+      <div class="card-image card-image-5"><span>✨</span>
+      </div>
+      <div class="card-content">
+       <h3 class="card-title">Fairy Light Paradise</h3>
+       <p class="card-description">Magical ambiance with curtain lights and drapes</p>
+       <div class="card-price-section"><span class="card-price-original">₹5,499</span> <span class="card-price">₹3,999</span> <span class="card-discount">27% OFF</span>
+       </div>
+       <div class="card-rating"><span class="stars">★★★★☆</span> <span class="rating-text">4.5 (229 reviews)</span>
+       </div>
+      </div>
+     </div>
+     <div class="card">
+      <div class="card-image card-image-6"><span>🎈</span>
+      </div>
+      <div class="card-content">
+       <h3 class="card-title">Deluxe Celebration Pack</h3>
+       <p class="card-description">Complete anniversary setup with balloons, flowers, and more</p>
+       <div class="card-price-section"><span class="card-price-original">₹8,499</span> <span class="card-price">₹5,999</span> <span class="card-discount">29% OFF</span>
+       </div>
+       <div class="card-rating"><span class="stars">★★★★★</span> <span class="rating-text">4.9 (412 reviews)</span>
+       </div>
+      </div>
+     </div>
+
+
+   
+
+  </div>
+  
+  <title>Baby Shower Decorations</title>
+  <style>
+        * 
+        
+        bodyV1 {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            height: 100%;
+            background-color: #eff6ff;
+        }
+        
+        .containerV1 {
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+        }
+        
+        .headerV1 {
+            background: linear-gradient(135deg, #93c5fd 0%, #fda4af 50%, #fbbf24 100%);
+            color: white;
+            text-align: center;
+            padding: 48px 16px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .header h1V1 {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+        
+        .header pV1 {
+            font-size: 1.25rem;
+            opacity: 0.9;
+        }
+        
+        .mainV1 {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 32px 16px;
+        }
+        
+        .gridV1 {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 24px;
+        }
+        
+        .cardV1 {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .card:hoverV1 {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(147,197,253,0.4);
+        }
+        
+        .card-imageV1 {
+            height: 256px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+        }
+        
+        .card-image-1V1 {
+            background: linear-gradient(135deg, #bfdbfe 0%, #fbcfe8 100%);
+        }
+        
+        .card-image-2V1 {
+            background: linear-gradient(135deg, #fbcfe8 0%, #bfdbfe 100%);
+        }
+        
+        .card-image-3V1 {
+            background: linear-gradient(135deg, #fef08a 0%, #fbcfe8 100%);
+        }
+        
+        .card-image-4V1 {
+            background: linear-gradient(135deg, #bfdbfe 0%, #fef08a 100%);
+        }
+        
+        .card-image-5V1 {
+            background: linear-gradient(135deg, #fbcfe8 0%, #fef08a 100%);
+        }
+        
+        .card-image-6V1 {
+            background: linear-gradient(135deg, #bfdbfe 0%, #f9a8d4 100%);
+        }
+        
+        .card-contentV1 {
+            padding: 24px;
+        }
+        
+        .card-titleV1 {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #1f2937;
+            margin-bottom: 8px;
+        }
+        
+        .card-descriptionV1 {
+            color: #4b5563;
+            margin-bottom: 16px;
+            line-height: 1.5;
+        }
+        
+        .card-price-sectionV1 {
+            display: flex;
+            align-items: baseline;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+        
+        .card-price-originalV1 {
+            font-size: 1.125rem;
+            color: #9ca3af;
+            text-decoration: line-through;
+        }
+        
+        .card-priceV1 {
+            font-size: 1.875rem;
+            font-weight: bold;
+            color: #60a5fa;
+        }
+        
+        .card-discountV1 {
+            background-color: #dcfce7;
+            color: #16a34a;
+            font-size: 0.875rem;
+            font-weight: bold;
+            padding: 4px 8px;
+            border-radius: 4px;
+        }
+        
+        .card-ratingV1 {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 12px;
+        }
+        
+        .starsV1 {
+            color: #fbbf24;
+            font-size: 1rem;
+        }
+        
+        .rating-textV1V1 {
+            color: #6b7280;
+            font-size: 0.875rem;
+        }
+        
+        .back-sectionV1 {
+            text-align: center;
+            margin-top: 48px;
+        }
+        
+        .back-buttonV1 {
+            display: inline-block;
+            background-color: #60a5fa;
+            color: white;
+            font-weight: bold;
+            padding: 12px 32px;
+            border-radius: 9999px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+        
+        .back-button:hoverV1 {
+            background-color: #3b82f6;
+        }
+        
+        @media (min-width: 768px) {
+            .gridV1 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .header h1V1 {
+                font-size: 3rem;
+            }
+        }
+        
+        @media (min-width: 1024px) {
+            .gridV1 {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            
+            .header h1V1 {
+                font-size: 3.5rem;
+            }
+        }
+    </style>
+  <div class="containerV1">
+   <header class="headerV1">
+    <h1>👶 Baby Shower Decorations</h1>
+    <p>Celebrate The Little One</p>
+   </header>
+   <main class="mainV1">
+    <div class="gridV1">
+     <div class="cardV1">
+      <div class="card-imageV1 card-image-1V1"><span>🍼</span>
+      </div>
+      <div class="card-contentV1V1">
+       <h3 class="card-titleV1V1">Sweet Baby Welcome</h3>
+       <p class="card-descriptionV1V1">Pastel balloon garland with baby bottles and teddy bears</p>
+       <div class="card-priceV1-sectionV1"><span class="card-priceV1-originalV1">₹4,899</span> <span class="card-priceV1">₹3,499</span> <span class="card-discountV1">29% OFF</span>
+       </div>
+       <div class="card-ratingV1V1"><span class="starsV1">★★★★★</span> <span class="rating-textV1">4.8 (267 reviews)</span>
+       </div>
+      </div>
+     </div>
+     <div class="cardV1">
+      <div class="card-imageV1 card-image-2V1"><span>🎀</span>
+      </div>
+      <div class="card-contentV1">
+       <h3 class="card-titleV1">Gender Reveal Setup</h3>
+       <p class="card-descriptionV1">Blue and pink theme with reveal balloons and backdrop</p>
+       <div class="card-priceV1-sectionV1"><span class="card-priceV1-originalV1">₹6,999</span> <span class="card-priceV1">₹4,999</span> <span class="card-discountV1">29% OFF</span>
+       </div>
+       <div class="card-ratingV1"><span class="starsV1">★★★★★</span> <span class="rating-textV1">4.9 (445 reviews)</span>
+       </div>
+      </div>
+     </div>
+     <div class="cardV1">
+      <div class="card-image card-image-3V1"><span>🧸</span>
+      </div>
+      <div class="card-contentV1">
+       <h3 class="card-titleV1">Teddy Bear Theme</h3>
+       <p class="card-descriptionV1">Adorable teddy bear decorations with soft pastel colors</p>
+       <div class="card-priceV1-sectionV1"><span class="card-priceV1-originalV1">₹6,299</span> <span class="card-priceV1">₹4,499</span> <span class="card-discountV1">29% OFF</span>
+       </div>
+       <div class="card-ratingV1"><span class="stars">★★★★☆</span> <span class="rating-textV1">4.7 (334 reviews)</span>
+       </div>
+      </div>
+     </div>
+     <div class="cardV1">
+      <div class="card-imageV1 card-image-4V1"><span>🌙</span>
+      </div>
+      <div class="card-contentV1">
+       <h3 class="card-titleV1">Twinkle Star Setup</h3>
+       <p class="card-descriptionV1">Moon and stars theme with fairy lights and clouds</p>
+       <div class="card-priceV1-sectionV1"><span class="card-priceV1-originalV1">₹5,599</span> <span class="card-priceV1">₹3,999</span> <span class="card-discountV1">29% OFF</span>
+       </div>
+       <div class="card-ratingV1"><span class="stars">★★★★★</span> <span class="rating-textV1">4.8 (289 reviews)</span>
+       </div>
+      </div>
+     </div>
+     <div class="cardV1">
+      <div class="card-imageV1 card-image-5V1"><span>🦋</span>
+      </div>
+      <div class="card-contentV1">
+       <h3 class="card-titleV1">Butterfly Garden</h3>
+       <p class="card-descriptionV1">Elegant butterfly and floral decoration with hanging ornaments</p>
+       <div class="card-priceV1-sectionV1"><span class="card-priceV1-originalV1">₹7,699</span> <span class="card-priceV1">₹5,499</span> <span class="card-discountV1">29% OFF</span>
+       </div>
+       <div class="card-ratingV1"><span class="starsV1">★★★★★</span> <span class="rating-textV1">4.9 (401 reviews)</span>
+       </div>
+      </div>
+     </div>
+     <div class="card">
+      <div class="card-imageV1 card-image-6V1"><span>🎈</span>
+      </div>
+      <div class="card-contentV1">
+       <h3 class="card-titleV1">Deluxe Baby Shower</h3>
+       <p class="card-descriptionV1">Complete package with balloons, backdrop, props, and table setup</p>
+       <div class="card-priceV1-sectionV1"><span class="card-priceV1-originalV1">₹11,299</span> <span class="card-priceV1">₹7,999</span> <span class="card-discountV1">29% OFF</span>
+       </div>
+       <div class="card-ratingV1"><span class="starsV1">★★★★★</span> <span class="rating-textV1">5.0 (578 reviews)</span>
+       </div>
+      </div>
+     </div>
+   </main>
+  </div>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9c72a325760ab117',t:'MTc2OTk2MTM3MC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+
+ </html>

@@ -1,0 +1,291 @@
+
+<!doctype html>
+<html lang="en" style="height: 100%;">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Valentine's Day Decorations</title>
+  <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            height: 100%;
+            background-color: #fef2f2;
+        }
+        
+        .container {
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #dc2626 0%, #f43f5e 50%, #ec4899 100%);
+            color: white;
+            text-align: center;
+            padding: 48px 16px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .header h1 {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+        
+        .header p {
+            font-size: 1.25rem;
+            opacity: 0.9;
+        }
+        
+        .main {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 32px 16px;
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 24px;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(220,38,38,0.3);
+        }
+        
+        .card-image {
+            height: 256px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+        }
+        
+        .card-image-1 {
+            background: linear-gradient(135deg, #fecaca 0%, #fbcfe8 100%);
+        }
+        
+        .card-image-2 {
+            background: linear-gradient(135deg, #fbcfe8 0%, #fca5a5 100%);
+        }
+        
+        .card-image-3 {
+            background: linear-gradient(135deg, #fca5a5 0%, #f9a8d4 100%);
+        }
+        
+        .card-image-4 {
+            background: linear-gradient(135deg, #fbcfe8 0%, #fecaca 100%);
+        }
+        
+        .card-image-5 {
+            background: linear-gradient(135deg, #fecaca 0%, #f9a8d4 100%);
+        }
+        
+        .card-image-6 {
+            background: linear-gradient(135deg, #f9a8d4 0%, #fca5a5 100%);
+        }
+        
+        .card-content {
+            padding: 24px;
+        }
+        
+        .card-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #1f2937;
+            margin-bottom: 8px;
+        }
+        
+        .card-description {
+            color: #4b5563;
+            margin-bottom: 16px;
+            line-height: 1.5;
+        }
+        
+        .card-price-section {
+            display: flex;
+            align-items: baseline;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+        
+        .card-price-original {
+            font-size: 1.125rem;
+            color: #9ca3af;
+            text-decoration: line-through;
+        }
+        
+        .card-price {
+            font-size: 1.875rem;
+            font-weight: bold;
+            color: #dc2626;
+        }
+        
+        .card-discount {
+            background-color: #dcfce7;
+            color: #16a34a;
+            font-size: 0.875rem;
+            font-weight: bold;
+            padding: 4px 8px;
+            border-radius: 4px;
+        }
+        
+        .card-rating {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 12px;
+        }
+        
+        .stars {
+            color: #fbbf24;
+            font-size: 1rem;
+        }
+        
+        .rating-text {
+            color: #6b7280;
+            font-size: 0.875rem;
+        }
+        
+        .back-section {
+            text-align: center;
+            margin-top: 48px;
+        }
+        
+        .back-button {
+            display: inline-block;
+            background-color: #dc2626;
+            color: white;
+            font-weight: bold;
+            padding: 12px 32px;
+            border-radius: 9999px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+        
+        .back-button:hover {
+            background-color: #b91c1c;
+        }
+        
+        @media (min-width: 768px) {
+            .grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .header h1 {
+                font-size: 3rem;
+            }
+        }
+        
+        @media (min-width: 1024px) {
+            .grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            
+            .header h1 {
+                font-size: 3.5rem;
+            }
+        }
+    </style>
+  <div class="container">
+   <header class="header">
+    <h1>💖 Valentine's Day Decorations</h1>
+    <p>Spread Love &amp; Romance</p>
+   </header>
+   <main class="main">
+    <div class="grid">
+     <div class="card">
+      <div class="card-image card-image-1"><span>❤️</span>
+      </div>
+      <div class="card-content">
+       <h3 class="card-title">Heart Balloon Bouquet</h3>
+       <p class="card-description">Red and pink heart-shaped balloons with ribbon arrangement</p>
+       <div class="card-price-section"><span class="card-price-original">₹2,799</span> <span class="card-price">₹1,999</span> <span class="card-discount">29% OFF</span>
+       </div>
+       <div class="card-rating"><span class="stars">★★★★★</span> <span class="rating-text">4.7 (234 reviews)</span>
+       </div>
+      </div>
+     </div>
+     <div class="card">
+      <div class="card-image card-image-2"><span>🌹</span>
+      </div>
+      <div class="card-content">
+       <h3 class="card-title">Red Rose Paradise</h3>
+       <p class="card-description">Luxurious red rose petals pathway with tea lights</p>
+       <div class="card-price-section"><span class="card-price-original">₹4,199</span> <span class="card-price">₹2,999</span> <span class="card-discount">29% OFF</span>
+       </div>
+       <div class="card-rating"><span class="stars">★★★★★</span> <span class="rating-text">4.9 (387 reviews)</span>
+       </div>
+      </div>
+     </div>
+     <div class="card">
+      <div class="card-image card-image-3"><span>💝</span>
+      </div>
+      <div class="card-content">
+       <h3 class="card-title">Romantic Dinner Setup</h3>
+       <p class="card-description">Candlelit dinner table with rose centerpiece and décor</p>
+       <div class="card-price-section"><span class="card-price-original">₹6,299</span> <span class="card-price">₹4,499</span> <span class="card-discount">29% OFF</span>
+       </div>
+       <div class="card-rating"><span class="stars">★★★★★</span> <span class="rating-text">4.8 (412 reviews)</span>
+       </div>
+      </div>
+     </div>
+     <div class="card">
+      <div class="card-image card-image-4"><span>💕</span>
+      </div>
+      <div class="card-content">
+       <h3 class="card-title">Love Letter Wall</h3>
+       <p class="card-description">Photo wall with love letters, fairy lights, and heart cutouts</p>
+       <div class="card-price-section"><span class="card-price-original">₹4,899</span> <span class="card-price">₹3,499</span> <span class="card-discount">29% OFF</span>
+       </div>
+       <div class="card-rating"><span class="stars">★★★★☆</span> <span class="rating-text">4.6 (298 reviews)</span>
+       </div>
+      </div>
+     </div>
+     <div class="card">
+      <div class="card-image card-image-5"><span>💐</span>
+      </div>
+      <div class="card-content">
+       <h3 class="card-title">Cupid's Garden</h3>
+       <p class="card-description">Mixed flower arrangement with heart-shaped arch and props</p>
+       <div class="card-price-section"><span class="card-price-original">₹7,699</span> <span class="card-price">₹5,499</span> <span class="card-discount">29% OFF</span>
+       </div>
+       <div class="card-rating"><span class="stars">★★★★★</span> <span class="rating-text">4.9 (523 reviews)</span>
+       </div>
+      </div>
+     </div>
+     <div class="card">
+      <div class="card-image card-image-6"><span>💗</span>
+      </div>
+      <div class="card-content">
+       <h3 class="card-title">Ultimate Love Package</h3>
+       <p class="card-description">Complete Valentine's setup with roses, balloons, lights, and more</p>
+       <div class="card-price-section"><span class="card-price-original">₹11,299</span> <span class="card-price">₹7,999</span> <span class="card-discount">29% OFF</span>
+       </div>
+       <div class="card-rating"><span class="stars">★★★★★</span> <span class="rating-text">5.0 (678 reviews)</span>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div class="back-section"><a href="index.html" class="back-button">← Back to Categories</a>
+    </div>
+   </main>
+  </div>
+
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9c72a325760ab117',t:'MTc2OTk2MTM3MC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>

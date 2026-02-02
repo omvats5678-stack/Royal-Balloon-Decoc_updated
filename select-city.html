@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Select Your City – Balloon Bliss</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #f9f9f9;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .city-modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.6);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 999;
+    }
+
+    .city-popup {
+      background: #fff;
+      padding: 40px;
+      border-radius: 16px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+      max-width: 700px;
+      width: 90%;
+      text-align: center;
+    }
+
+    .city-popup h2 {
+      color: #ea3030;
+      margin-bottom: 10px;
+    }
+
+    .city-popup p {
+      color: #555;
+      margin-bottom: 30px;
+    }
+
+    .city-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 16px;
+    }
+
+    .city-card {
+      background: #fafafa;
+      color: #000000;
+      border: none;
+      padding: 16px 10px;
+      border-radius: 10px;
+      cursor: pointer;
+      font-weight: 500;
+      transition: background 0.3s;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .city-card:hover {
+      background: #c2185b;
+    }
+
+    .city-card img {
+      width: 40px;
+      height: 40px;
+      margin-bottom: 8px;
+    }
+
+    .footer-note {
+      margin-top: 30px;
+      font-size: 14px;
+      color: #888;
+    }
+
+    .close-btn {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background: #991a1a;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="city-popup">
+    <h2>Select your City</h2>
+    <p>Find more than 3000 decorations, gifts and surprises!</p>
+
+    <div class="city-grid">
+      <!-- Add cities below -->
+      <div class="city-card" onclick="selectCity('Delhi NCR')">
+        <img src="images/Delhi_Icon-min.png" alt="Delhi NCR Icon">
+        Delhi NCR
+      </div>
+      <div class="city-card" onclick="selectCity('Jaipur')">
+        <img src="images/Jaipur_Icon-min.png" alt="Delhi NCR Icon">
+        
+        Jaipur
+      </div>
+      <div class="city-card" onclick="selectCity('Bangalore')">
+        <img src="images/Bangalore_Icon-min.png" alt="Delhi NCR Icon">
+        Bangalore
+      </div>
+      <div class="city-card" onclick="selectCity('Kolkata')">
+        <img src="images/Kolkata.png" alt="Delhi NCR Icon">
+        Kolkata
+      </div>
+      <div class="city-card" onclick="selectCity('Indore')">
+        <img src="images/Indore.png" alt="Delhi NCR Icon">
+        Indore
+      </div>
+      <div class="city-card" onclick="selectCity('Pune')">
+        <img src="images/Pune.png" alt="Delhi NCR Icon">
+        Pune
+      </div>
+      <div class="city-card" onclick="selectCity('Across India')">
+        <img src="images/india-icon-min.png" alt="Delhi NCR Icon">
+        Across India
+      </div>
+      <div class="city-card" onclick="selectCity('Hyderabad')">
+        <img src="images/Hyderabad_min.png" alt="Delhi NCR Icon">
+        Hyderabad
+      </div>
+      <div class="city-card" onclick="selectCity('Mumbai')">
+        <img src="images/Mumbai_min.png" alt="Delhi NCR Icon">
+        Mumbai
+      </div>
+      <div class="city-card" onclick="selectCity('Kanpur')">
+        <img src="images/Kanpur_min.png" alt="Delhi NCR Icon">
+        Kanpur
+      </div>
+      <div class="city-card" onclick="selectCity('Chennai')">
+        <img src="images/Chennai_min.png" alt="Delhi NCR Icon">
+        Chennai
+      </div>
+      <div class="city-card" onclick="selectCity('Jammu')">
+        <img src="images/Jammu_min.png" alt="Delhi NCR Icon">
+        Jammu
+      </div>
+      <div class="city-card" onclick="selectCity('Lucknow')">
+        <img src="images/Lucknow_min.png" alt="Delhi NCR Icon">
+        Lucknow
+      </div>
+      <div class="city-card" onclick="selectCity('Chandigarh')">
+        <img src="images/Chandigarh_min.png" alt="Delhi NCR Icon">
+        Chandigarh
+      </div>
+      <div class="city-card" onclick="selectCity('Ahmedabad')">
+        <img src="images/Ahmedabad.jpg" alt="Delhi NCR Icon">
+        Ahmedabad
+      </div>
+      <!-- Comment: Add or remove cities as needed -->
+    </div>
+
+    <div class="footer-note">
+      Your selected city will be saved for future visits.
+    </div>
+  </div>
+
+  <script>
+    function openCityModal() {
+      document.getElementById("cityModal").style.display = "flex";
+    }
+
+    function closeCityModal() {
+      document.getElementById("cityModal").style.display = "none";
+    }
+
+    function selectCity(cityName) {
+      localStorage.setItem("citySelected", cityName);
+      alert("City selected: " + cityName);
+      closeCityModal();
+    }
+
+  </script>
+
+</body>
+</html>

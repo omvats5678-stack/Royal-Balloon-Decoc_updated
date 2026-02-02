@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Balloon Bliss – Menu</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .nav-wrapper {
+      background: #fff;
+      border-bottom: 1px solid #eee;
+      padding: 10px 20px;
+    }
+
+    .nav-dropdown {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .dropdown {
+      position: relative;
+    }
+
+    .dropbtn {
+      background: none;
+      border: none;
+      font-size: 16px;
+      font-weight: 600;
+      color: #c2185b;
+      cursor: pointer;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #fff;
+      min-width: 220px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+      z-index: 1;
+      border-radius: 6px;
+      overflow: hidden;
+    }
+
+    .dropdown-content a {
+      padding: 10px 16px;
+      display: block;
+      text-decoration: none;
+      color: #333;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #f1f1f1;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    /* Hamburger for mobile */
+    .hamburger {
+      display: none;
+      background: #ffeb3b;
+      padding: 10px 16px;
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+      border-radius: 6px;
+      margin-bottom: 10px;
+    }
+
+    .mobile-menu {
+      display: none;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .mobile-menu .dropdown-content {
+      position: static;
+      box-shadow: none;
+      border: 1px solid #eee;
+    }
+
+    @media (max-width: 768px) {
+      .nav-dropdown {
+        display: none;
+      }
+
+      .hamburger {
+        display: block;
+      }
+
+      .mobile-menu.active {
+        display: flex;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="nav-wrapper">
+    <div class="hamburger" onclick="toggleMobileMenu()">☰ Menu</div>
+    <div class="nav-dropdown" id="desktop-menu"></div>
+    <div class="mobile-menu" id="mobile-menu"></div>
+  </div>
+
+  <script>
+    function toggleMobileMenu() {
+      document.getElementById("mobile-menu").classList.toggle("active");
+    }
+
+    async function loadMenuFromCSV() {
+      const response = await fetch("Decoration_Item/List.csv");
+      const text = await response.text();
+
+      const rows = text.trim().split("\n").map(row => row.split(","));
+      const categories = {};
+
+      rows.forEach(([category, item]) => {
+        if (!categories[category]) categories[category] = [];
+        categories[category].push(item);
+      });
+
+      const desktop = document.getElementById("desktop-menu");
+      const mobile = document.getElementById("mobile-menu");
+
+      Object.entries(categories).forEach(([category, items]) => {
+        // Desktop dropdown
+        const dropdown = document.createElement("div");
+        dropdown.className = "dropdown";
+
+        const button = document.createElement("button");
+        button.className = "dropbtn";
+        button.textContent = category;
+
+        const content = document.createElement("div");
+        content.className = "dropdown-content";
+
+        items.forEach(item => {
+          const link = document.createElement("a");
+          link.href = "#";
+          link.textContent = item;
+          content.appendChild(link);
+        });
+
+        dropdown.appendChild(button);
+        dropdown.appendChild(content);
+        desktop.appendChild(dropdown);
+
+        // Mobile dropdown
+        const mobileGroup = document.createElement("div");
+        mobileGroup.className = "dropdown";
+
+        const mobileBtn = document.createElement("button");
+        mobileBtn.className = "dropbtn";
+        mobileBtn.textContent = category;
+        mobileBtn.onclick = () => {
+          mobileContent.style.display = mobileContent.style.display === "block" ? "none" : "block";
+        };
+
+        const mobileContent = document.createElement("div");
+        mobileContent.className = "dropdown-content";
+        mobileContent.style.display = "none";
+
+        items.forEach(item => {
+          const link = document.createElement("a");
+          link.href = "#";
+          link.textContent = item;
+          mobileContent.appendChild(link);
+        });
+
+        mobileGroup.appendChild(mobileBtn);
+        mobileGroup.appendChild(mobileContent);
+        mobile.appendChild(mobileGroup);
+      });
+    }
+
+    loadMenuFromCSV();
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Booking Page</title>
+  <link rel="stylesheet" href="booking.css">
+</head>
+<body>
+  <header>
+    <h1>Book Your Decoration</h1>
+  </header>
+
+  <!-- Selected Product Display -->
+  <section id="selectedProduct" class="selected-product hidden">
+    <img id="selectedImage" src="" alt="Selected Product">
+    <div>
+      <h2 id="selectedName"></h2>
+      <p id="selectedPrice"></p>
+    </div>
+  </section>
+
+  <!-- Product List -->
+  <section class="product-list">
+    <div class="product" data-name="Marry Me Proposal" data-price="₹6599" data-image="images/marryme.jpg">
+      <img src="images/marryme.jpg" alt="Marry Me Proposal">
+      <h3>Marry Me Proposal</h3>
+      <p>₹6599</p>
+    </div>
+
+    <div class="product" data-name="Birthday Surprise" data-price="₹4999" data-image="images/birthday.jpg">
+      <img src="images/birthday.jpg" alt="Birthday Surprise">
+      <h3>Birthday Surprise</h3>
+      <p>₹4999</p>
+    </div>
+  </section>
+
+  <!-- Booking Form -->
+  <section id="bookingForm" class="booking-form hidden">
+    <h3>Complete Your Booking</h3>
+    <form id="bookNowForm">
+      <label>Pincode</label>
+      <input type="text" id="pincode" required>
+
+      <label>Select Date & Time</label>
+      <input type="datetime-local" id="datetime" required>
+
+      <button type="submit">Book Now</button>
+    </form>
+  </section>
+
+  <script src="booking.js"></script>
+</body>
+</html>
